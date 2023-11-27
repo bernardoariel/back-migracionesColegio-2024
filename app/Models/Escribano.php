@@ -12,19 +12,20 @@ class Escribano extends Model
     protected $table = 'escribanos';
     protected $fillable = [
         'nombre',
-        'register_number',
+        'apellido',
+        'matricula',
         'dni',
         'cuil',
         'sexo',
-        'address', // Cambio de nombre
+        'direccion',
         'telefono',
         'email',
-        'condition_id',
+        'condicion_id',
         'user_id',
     ];
 
-    public function condition(){
-        return $this->belongsTo(Condition::class);
+    public function condicion(){
+        return $this->belongsTo(Condition::class, 'condicion_id');
     }
 
     public function user(){

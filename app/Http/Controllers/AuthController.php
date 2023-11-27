@@ -15,9 +15,8 @@ class AuthController extends Controller
         $rules = [
             'name' => 'required|string|max:100',
             'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:6',
             'lastname' => 'required|string|max:100',
-            'cuil' => 'required|string|max:100'
         ];
 
         $validator = Validator::make($request->input(),$rules);
@@ -34,7 +33,6 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'lastname' => $request->lastname,
-            'cuil' => $request->cuil
         ]);
 
         return response()->json([

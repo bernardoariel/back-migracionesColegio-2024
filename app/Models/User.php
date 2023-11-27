@@ -23,7 +23,6 @@ class User extends Authenticatable
         'email',
         'password',
         'lastname', // Nuevo campo para el apellido
-        'cuil',     // Nuevo campo para el CUIL
     ];
 
    

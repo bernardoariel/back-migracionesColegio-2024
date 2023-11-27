@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('lastname')->default(''); // Nuevo campo para el apellido   // Nuevo campo para el CUIL
             $table->string('password');
-            $table->string('lastname')->default(''); // Nuevo campo para el apellido
-            $table->string('cuil')->default('');     // Nuevo campo para el CUIL
             $table->rememberToken();
             $table->timestamps();
         });

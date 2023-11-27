@@ -14,19 +14,20 @@ return new class extends Migration
         Schema::create('escribanos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('register_number')->unique();
+            $table->string('apellido');
+            $table->string('matricula')->nullable()->unique();
             $table->string('dni')->unique();
             $table->string('cuil');
             $table->enum('sexo', ['Masculino', 'Femenino', 'Otro']);
-            $table->string('address'); // Cambio de nombre
+            $table->string('direccion'); // Cambio de nombre
             $table->string('telefono');
             $table->string('email')->unique();
-            $table->unsignedBigInteger('condition_id');
+            $table->unsignedBigInteger('condicion_id');
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
 
-            $table->foreign('condition_id')->references('id')->on('conditions');
+            $table->foreign('condicion_id')->references('id')->on('conditions');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

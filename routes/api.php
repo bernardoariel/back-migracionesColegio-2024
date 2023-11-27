@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EscribanoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::get('/conditions/{id}', [ConditionController::class, 'show'])->name('cond
 
 Route::get('/users',[UserController::class, 'index']);
 Route::get('/user/{id}',[UserController::class,'show']);
+
+Route::get('/escribanos', [EscribanoController::class, 'index'])->name('escribanos.index');
+Route::get('/escribanos/{id}', [EscribanoController::class, 'show'])->name('escribanos.show');
